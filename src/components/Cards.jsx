@@ -42,12 +42,11 @@ const CardList = () => {
   }, []);
 
   // Función para mostrar la modal cuando se clickea una tarjeta
-  const showModal = (title, description) => {
+  const showModal = () => {
     Swal.fire({
-      title: title,
-      text: description,
-      icon: "info",
-      confirmButtonText: "Aceptar",
+      imageUrl: "https://placeholder.pics/svg/300x1500",
+      imageHeight: 1500,
+      imageAlt: "A tall image",
     });
   };
 
@@ -60,7 +59,7 @@ const CardList = () => {
             title={card.title}
             description={card.description}
             imageUrl={card.imageUrl}
-            onClick={() => showModal(card.title, card.description)} // Pasar la función onClick para abrir la modal
+            onClick={() => showModal()} // Pasar la función onClick para abrir la modal
           />
         ))
       ) : (
